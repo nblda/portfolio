@@ -10,6 +10,8 @@ import HomePage from './components/HomePage';
 import ContactPage from './components/ContactPage';
 import AboutPage from './components/AboutPage';
 
+import projectsData from './projectsData.js'
+
 
 class App extends React.Component {
 
@@ -23,17 +25,17 @@ class App extends React.Component {
         { title: 'Contact', path: '/contact'}
       ],
       home : {
-        title: 'Do whathever you like or appreciate what you do, but have fun',
-        subtitle: 'You will see a part of me here, feel free to contact me so i could learn more about you',
-        text: 'Checkout my projects and stack below'
+        title: 'Have fun',
+        subTitle: 'You will learn about me',
+        text: 'Enjoy your visit'
       },
       about: {
         title: 'About me'
       },
       contact: {
         title: 'Let\'s talk'
-      }
-
+      },
+      projects: projectsData
     }
   }
 
@@ -55,7 +57,7 @@ class App extends React.Component {
               </Navbar.Collapse>
             </Navbar>
 
-            <Route path="/" exact render={() => <HomePage title={this.state.home.title} subtitles={this.state.home.subtitle} text={this.state.home.text} /> } />
+            <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text} /> } />
             <Route path="/about" exact render={() => <AboutPage title={this.state.about.title} /> } />
             <Route path="/contact" exact render={() => <ContactPage title={this.state.contact.title} /> } />
 
