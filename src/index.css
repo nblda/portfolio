@@ -38,3 +38,22 @@ code {
   font-size: 16px;
   margin: 0px;
 }
+
+.n-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4em;
+  background-color: #ccc;
+}
+
+.success-msg{
+  color: #57A773;
+  padding: 10px 15px;
+}
+
+.error-msg{
+  color: #EE6352;
+  padding: 10px 15px;
+}
