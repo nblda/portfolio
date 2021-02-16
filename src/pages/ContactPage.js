@@ -105,8 +105,10 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-import Hero from './Hero';
-import Content from './Content';
+import Hero from '../components/Hero';
+import Content from '../components/Content';
+import NavArrow from '../components/NavArrow';
+
 import Axios from 'axios';
 
 class ContactPage extends React.Component {
@@ -173,6 +175,8 @@ class ContactPage extends React.Component {
         return(
             <div>
                 <Hero title={this.props.title} />
+
+                <NavArrow side="left" to="/about"/>
 
                 <Content>
                     <Form onSubmit={this.handleSubmit}>
