@@ -111,3 +111,8 @@ code {
           }
 
 /* End stack game  */
+
+/* canvas */
+.canvas-img{
+  display: none;
+}

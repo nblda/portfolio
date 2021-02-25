@@ -52,7 +52,7 @@ class ContactPage extends React.Component {
         });
 
         //remplacer les valeurs apres inscription puis creation d'un service et d'un template
-         emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
         .then((result) => {
             console.log(result.text);
             this.setState({
