@@ -1,13 +1,28 @@
 import React from 'react';
 import NavArrow from '../components/NavArrow';
 // import Canvas from '../components/Canvas';
-import image1 from '../assets/images/image1.png';
+import image1 from '../assets/images/stack/image1.png';
+import image2 from '../assets/images/stack/image2.png';
+import image3 from '../assets/images/stack/image3.png';
+import image4 from '../assets/images/stack/image4.png';
+import image5 from '../assets/images/stack/image5.png';
+import image6 from '../assets/images/stack/image6.png';
+import image7 from '../assets/images/stack/image7.png';
+import image8 from '../assets/images/stack/image8.png';
+import image9 from '../assets/images/stack/image9.png';
+import image10 from '../assets/images/stack/image10.png';
+import image11 from '../assets/images/stack/image11.png';
+import image12 from '../assets/images/stack/image12.png';
+import image13 from '../assets/images/stack/image13.png';
+import image14 from '../assets/images/stack/image14.png';
+import image15 from '../assets/images/stack/image15.png';
 
 class StackPage extends React.Component{
 
     componentDidMount(){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
+    
 
     var x = canvas.width/2; //position x de depart de la balle
     var y = canvas.height-30; // position y de depart
@@ -24,14 +39,15 @@ class StackPage extends React.Component{
     var paddleWidth = 75;
     var paddleX = (canvas.width-paddleWidth)/2;
 
-    var spaceBar = false;
+    var spaceBarPressed = false;
     var rightPressed = false;
     var leftPressed = false;
+    var enterPressed = false;
 
     var brickRowCount = 3;
     var brickColumnCount = 5;
     var brickWidth = 75;
-    var brickHeight = 20;
+    var brickHeight = 30;
     var brickPadding = 10;
     var brickOffsetTop = 30;
     var brickOffsetLeft = 30;
@@ -51,7 +67,7 @@ class StackPage extends React.Component{
         images[c] = [];
         for (var r = 0; r < brickRowCount ; r++){
             bricks[c][r] = {x: 0, y: 0, status: 1}; //status = 'a afficher?' par defaut on affichera les briques et pas les images 
-            images[c][r] = {x: 0, y:0, status: 0};
+            images[c][r] = {x: 0, y:0, status: 0, id: c+''+r};
         }
     }
 
@@ -73,6 +89,7 @@ class StackPage extends React.Component{
             paddleX = relativeX - paddleWidth/2;
         }
     }
+
     
     function keyDownHandler(e){
         console.log(e);
@@ -80,8 +97,10 @@ class StackPage extends React.Component{
             rightPressed = true;
         } else if(e.key === "Left" || e.key === "ArrowLeft"){//keycode ===37
             leftPressed = true;
-        } else if (e.code === "Space"){ //spacebar
-            spaceBar = true;
+        } else if (e.code === "Space"){ //spaceBarPressed
+            spaceBarPressed = true;
+        } else if (e.code === "Enter"){
+            enterPressed = true;
         }
     }
 
@@ -90,8 +109,10 @@ class StackPage extends React.Component{
             rightPressed = false;
         } else if( e.key === "Left" || e.key === "ArrowLeft"){
             leftPressed = false;
-        } else if (e.code === "Space"){ //spacebar
-            spaceBar = false;
+        } else if (e.code === "Space"){ //spaceBarPressed
+            spaceBarPressed = false;
+        } else if(e.code === "Enter"){
+            enterPressed = false;
         }
      }
 
@@ -164,15 +185,38 @@ class StackPage extends React.Component{
             for(var r = 0; r < brickRowCount; r++){
                 if(images[c][r].status === 1){
                     //on prend en compte le nombre de column, la largeur d'une brique son padding et l'offset de depart a gauche
+                    var img = images[c][r];
                     var imageX = (c*(brickPadding+brickWidth)+brickOffsetLeft);
                     var imageY = (r*(brickPadding+brickHeight)+brickOffsetTop);// pareil en hauteur
-                    images[c][r].x = imageX;
-                    images[c][r].y = imageY;
+                    img.x = imageX;
+                    img.y = imageY;
                     
-                    var image = document.getElementById('test');
+                    // for(var imageIndex = 1; imageIndex<15; imageIndex++){
+                        console.log(img.id);
+                        var image = document.getElementById(img.id);
 
-                    ctx.drawImage(image, imageX, imageY, brickWidth, brickHeight);
+                        ctx.drawImage(image, imageX, imageY, brickWidth, brickHeight);
+                        // img.id++;
+                    // }
+                    
                 }
+            }
+        }
+    }
+
+    function drawAllImages(){
+        for(var c = 0; c < brickColumnCount; c++){
+            for(var r = 0; r < brickRowCount; r++){
+                //on prend en compte le nombre de column, la largeur d'une brique son padding et l'offset de depart a gauche
+                var img = images[c][r];
+                    var imageX = (c*(brickPadding+brickWidth)+brickOffsetLeft);
+                    var imageY = (r*(brickPadding+brickHeight)+brickOffsetTop);// pareil en hauteur
+                    img.x = imageX;
+                    img.y = imageY;
+                
+                var image = document.getElementById(img.id);
+
+                ctx.drawImage(image, imageX, imageY, brickWidth, brickHeight);
             }
         }
     }
@@ -231,10 +275,22 @@ class StackPage extends React.Component{
             }
         }
         
-        if(dx === 0 && dy === 0 && !inGame && spaceBar){
+        if(dx === 0 && dy === 0 && !inGame && spaceBarPressed){
             dx = -3;
             dy = 2;
             inGame = true;
+        }
+
+        if(enterPressed){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawAllImages();
+
+            inGame = false; //etat initial
+            dx=0;
+            dy=0;
+            x = paddleX;
+            y = canvas.height-30;
+
         }
 
         //on verifiait la colision par rapport au centre de la balle, 
@@ -315,7 +371,21 @@ class StackPage extends React.Component{
                 <NavArrow side="right" to="/projects"/>
 
                 <canvas id="myCanvas" width="480" height="320"></canvas>
-                <div className="canvas-img" ><img id='test' src={image1} alt='imgTest' /></div>
+                <div className="canvas-img" ><img id='00' src={image1} alt='image1' /></div>
+                <div className="canvas-img" ><img id='01' src={image2} alt='image2' /></div>
+                <div className="canvas-img" ><img id='02' src={image3} alt='image3' /></div>
+                <div className="canvas-img" ><img id='10' src={image4} alt='image4' /></div>
+                <div className="canvas-img" ><img id='11' src={image5} alt='image5'/></div>
+                <div className="canvas-img" ><img id='12' src={image6} alt='image6' /></div>
+                <div className="canvas-img" ><img id='20' src={image7} alt='image7' /></div>
+                <div className="canvas-img" ><img id='21' src={image8} alt='image8' /></div>
+                <div className="canvas-img" ><img id='22' src={image9} alt='image9' /></div>
+                <div className="canvas-img" ><img id='30' src={image10} alt='image10' /></div>
+                <div className="canvas-img" ><img id='31' src={image11} alt='image11' /></div>
+                <div className="canvas-img" ><img id='32' src={image12} alt='image12' /></div>
+                <div className="canvas-img" ><img id='40' src={image13} alt='image13' /></div>
+                <div className="canvas-img" ><img id='41' src={image14} alt='image14' /></div>
+                <div className="canvas-img" ><img id='42' src={image15} alt='image15' /></div>
                 <div className="game-over-notify">Game Over</div>
                 <div className="win-notify">Congratulation!</div>
             </>

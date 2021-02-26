@@ -76,7 +76,12 @@ code {
 
 /* stack game */
 * {padding: 0; margin: 0;}
-        canvas { background: #eee; display: block; margin: 0 auto;}
+        canvas{ 
+          background: #fff;
+          display: block; 
+          margin: 0 auto;
+          border: thick double #32a1ce; 
+        }
 
         .game-over-notify {
             position: fixed;

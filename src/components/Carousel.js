@@ -4,9 +4,9 @@ import Row from 'react-bootstrap/Row';
 
 import Card from './Card.js'
 
-import image1 from '../assets/images/image1.png';
-import image2 from '../assets/images/image2.png';
-import image3 from '../assets/images/image3.png';
+import image1 from '../assets/images/projects/image1.png';
+import image2 from '../assets/images/projects/image2.png';
+import image3 from '../assets/images/projects/image3.png';
 
 
 class Carousel extends React.Component {
