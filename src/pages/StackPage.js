@@ -1,21 +1,21 @@
 import React from 'react';
 import NavArrow from '../components/NavArrow';
 // import Canvas from '../components/Canvas';
-import image1 from '../assets/images/stack/image1.png';
-import image2 from '../assets/images/stack/image2.png';
-import image3 from '../assets/images/stack/image3.png';
-import image4 from '../assets/images/stack/image4.png';
-import image5 from '../assets/images/stack/image5.png';
-import image6 from '../assets/images/stack/image6.png';
-import image7 from '../assets/images/stack/image7.png';
-import image8 from '../assets/images/stack/image8.png';
-import image9 from '../assets/images/stack/image9.png';
+import image00 from '../assets/images/stack/image00.png';
+import image01 from '../assets/images/stack/image01.png';
+import image02 from '../assets/images/stack/image02.png';
 import image10 from '../assets/images/stack/image10.png';
 import image11 from '../assets/images/stack/image11.png';
 import image12 from '../assets/images/stack/image12.png';
-import image13 from '../assets/images/stack/image13.png';
-import image14 from '../assets/images/stack/image14.png';
-import image15 from '../assets/images/stack/image15.png';
+import image20 from '../assets/images/stack/image20.png';
+import image21 from '../assets/images/stack/image21.png';
+import image22 from '../assets/images/stack/image22.png';
+import image30 from '../assets/images/stack/image30.png';
+import image31 from '../assets/images/stack/image31.png';
+import image32 from '../assets/images/stack/image32.png';
+import image40 from '../assets/images/stack/image40.png';
+import image41 from '../assets/images/stack/image41.png';
+import image42 from '../assets/images/stack/image42.png';
 
 class StackPage extends React.Component{
 
@@ -25,7 +25,7 @@ class StackPage extends React.Component{
     
 
     var x = canvas.width/2; //position x de depart de la balle
-    var y = canvas.height-30; // position y de depart
+    var y = canvas.height-20; // position y de depart
     var dx = 0; //-2 mouvement de x a chaque frame de la balle
     var dy = 0; //2 mouvement de y a chaque frame
     var inGame = false;
@@ -43,6 +43,9 @@ class StackPage extends React.Component{
     var rightPressed = false;
     var leftPressed = false;
     var enterPressed = false;
+    var restartPressed = false;
+
+    var touching = false;
 
     var brickRowCount = 3;
     var brickColumnCount = 5;
@@ -74,6 +77,9 @@ class StackPage extends React.Component{
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
     document.addEventListener("mousemove", mouseMoveHandler, false);
+    document.addEventListener("touchmove", touchMoveHandler , false);
+    document.addEventListener("touchstart", touchStartHandler , false);
+    document.addEventListener("touchend", touchEndHandler , false);
 
     gameOverNotify.addEventListener("click", function() {
         document.location.reload();
@@ -87,12 +93,48 @@ class StackPage extends React.Component{
         var relativeX = e.clientX - canvas.offsetLeft;
         if(relativeX > 0 + paddleWidth/2 && relativeX < canvas.width - paddleWidth/2){
             paddleX = relativeX - paddleWidth/2;
+            // moving = true;
+        }
+        // moving = false;
+    }
+    
+    function touchMoveHandler(e){
+        var relativeX = e.touches[0].clientX - canvas.offsetLeft;
+        console.log(e);
+        if(relativeX > 0 + paddleWidth/2 && relativeX < canvas.width - paddleWidth/2){
+            paddleX = relativeX - paddleWidth/2;
+            // console.log('ici');
         }
     }
 
+    function touchStartHandler(e){
+        if(e.touches.length !== 0 ){
+            touching = true;
+        }
+        
+        if(e.touches.length === 2){ //si on touche avec deux doigts on revele tout
+            enterPressed = true;
+        } else {
+            enterPressed = false;
+        }
+        
+        if(e.touches.length === 3){ //si on touche avec deux doigts on revele tout
+            touching = false;
+            restart();
+        }
+
+
+
+    }
     
+    function touchEndHandler(e){
+        if(e.touches.length===0){
+            touching = false;
+        }
+    }
+
     function keyDownHandler(e){
-        console.log(e);
+        // console.log(e);
         if(e.key === "Right" || e.key === "ArrowRight"){ //e.keycode ===39
             rightPressed = true;
         } else if(e.key === "Left" || e.key === "ArrowLeft"){//keycode ===37
@@ -101,6 +143,8 @@ class StackPage extends React.Component{
             spaceBarPressed = true;
         } else if (e.code === "Enter"){
             enterPressed = true;
+        } else if (e.key === "r") {
+            restartPressed = true;
         }
     }
 
@@ -113,8 +157,29 @@ class StackPage extends React.Component{
             spaceBarPressed = false;
         } else if(e.code === "Enter"){
             enterPressed = false;
+        }  else if (e.key === "r") {
+            restartPressed = false;
         }
      }
+
+    function restart(){
+        inGame = false; //etat initial
+        touching = false;
+        spaceBarPressed = false;
+            dx=0;
+            dy=0;
+            x = paddleX-paddleWidth/2;
+            y = canvas.height-20;
+            lives = 3;
+            score = 0;
+
+            for(var c = 0; c < brickColumnCount; c++){
+                for(var r = 0; r < brickRowCount; r++){
+                    bricks[c][r].status = 1;
+                    images[c][r].status = 0;
+                }
+            }
+    }
 
     function collisionDetection(){
         for( var c=0 ; c<brickColumnCount; c++){
@@ -180,7 +245,7 @@ class StackPage extends React.Component{
         }
     }
 
-    function drawImages(){
+    async function drawImages(){
         for(var c = 0; c < brickColumnCount; c++){
             for(var r = 0; r < brickRowCount; r++){
                 if(images[c][r].status === 1){
@@ -192,9 +257,10 @@ class StackPage extends React.Component{
                     img.y = imageY;
                     
                     // for(var imageIndex = 1; imageIndex<15; imageIndex++){
-                        console.log(img.id);
+                        // console.log(img.id);
                         var image = document.getElementById(img.id);
-
+                        // let image = await loadImage('image'+img.id);
+                        console.log('image'+img.id);
                         ctx.drawImage(image, imageX, imageY, brickWidth, brickHeight);
                         // img.id++;
                     // }
@@ -203,6 +269,10 @@ class StackPage extends React.Component{
             }
         }
     }
+
+    // function loadImage(url) {
+    //     return new Promise(r => { let i = new Image(); i.onload = (() => r(i)); i.src = url; });
+    //   }
 
     function drawAllImages(){
         for(var c = 0; c < brickColumnCount; c++){
@@ -215,6 +285,10 @@ class StackPage extends React.Component{
                     img.y = imageY;
                 
                 var image = document.getElementById(img.id);
+
+                // let image = await loadImage('image'+img.id);
+                console.log('image'+img.id);
+
 
                 ctx.drawImage(image, imageX, imageY, brickWidth, brickHeight);
             }
@@ -261,23 +335,29 @@ class StackPage extends React.Component{
             }
         }
 
-        if(rightPressed && !inGame){
-            x += 7;
-            if(x + paddleWidth/2 > canvas.width){
-                x = canvas.width-paddleWidth/2;
-            }
-        
+        if(!inGame){
+            x = paddleX + paddleWidth/2;
+            y = canvas.height-20;
         }
-        if(leftPressed && !inGame){
-            x -= 7;
-            if(x-paddleWidth/2 < 0){
-                x = paddleWidth/2;
-            }
-        }
+
+        // if(rightPressed && !inGame){
+        //     x += 7;
+        //     if(x + paddleWidth/2 > canvas.width){
+        //         x = canvas.width-paddleWidth/2;
+        //     }
         
-        if(dx === 0 && dy === 0 && !inGame && spaceBarPressed){
-            dx = -3;
-            dy = 2;
+        // }
+        // if(leftPressed && !inGame){
+        //     x -= 7;
+        //     if(x-paddleWidth/2 < 0){
+        //         x = paddleWidth/2;
+        //     }
+        // }
+        
+         console.log(touching);
+        if(dx === 0 && dy === 0 && !inGame && (spaceBarPressed||touching)){
+            dx = 3;
+            dy = -2;
             inGame = true;
         }
 
@@ -289,8 +369,12 @@ class StackPage extends React.Component{
             dx=0;
             dy=0;
             x = paddleX;
-            y = canvas.height-30;
+            y = canvas.height-15;
 
+        }
+
+        if(restartPressed){
+            restart();
         }
 
         //on verifiait la colision par rapport au centre de la balle, 
@@ -322,7 +406,7 @@ class StackPage extends React.Component{
                 
                 //dy--;
                 //dx++;
-            } else {
+            } else { // la balle est en dehors du champ du paddle
                 lives--;
                 if(lives === 0){
                     gameOverNotify.style.display = 'flex';
@@ -344,6 +428,7 @@ class StackPage extends React.Component{
                     paddleX = (canvas.width-paddleWidth)/2;
                     x = paddleX;
                     y = canvas.height-30;
+                    touching = false;
                 }
             }          
         }
@@ -371,21 +456,21 @@ class StackPage extends React.Component{
                 <NavArrow side="right" to="/projects"/>
 
                 <canvas id="myCanvas" width="480" height="320"></canvas>
-                <div className="canvas-img" ><img id='00' src={image1} alt='image1' /></div>
-                <div className="canvas-img" ><img id='01' src={image2} alt='image2' /></div>
-                <div className="canvas-img" ><img id='02' src={image3} alt='image3' /></div>
-                <div className="canvas-img" ><img id='10' src={image4} alt='image4' /></div>
-                <div className="canvas-img" ><img id='11' src={image5} alt='image5'/></div>
-                <div className="canvas-img" ><img id='12' src={image6} alt='image6' /></div>
-                <div className="canvas-img" ><img id='20' src={image7} alt='image7' /></div>
-                <div className="canvas-img" ><img id='21' src={image8} alt='image8' /></div>
-                <div className="canvas-img" ><img id='22' src={image9} alt='image9' /></div>
-                <div className="canvas-img" ><img id='30' src={image10} alt='image10' /></div>
-                <div className="canvas-img" ><img id='31' src={image11} alt='image11' /></div>
-                <div className="canvas-img" ><img id='32' src={image12} alt='image12' /></div>
-                <div className="canvas-img" ><img id='40' src={image13} alt='image13' /></div>
-                <div className="canvas-img" ><img id='41' src={image14} alt='image14' /></div>
-                <div className="canvas-img" ><img id='42' src={image15} alt='image15' /></div>
+                <div className="canvas-img" ><img id='00' src={image00} alt='image1' /></div>
+                <div className="canvas-img" ><img id='01' src={image01} alt='image2' /></div>
+                <div className="canvas-img" ><img id='02' src={image02} alt='image3' /></div>
+                <div className="canvas-img" ><img id='10' src={image10} alt='image4' /></div>
+                <div className="canvas-img" ><img id='11' src={image11} alt='image5'/></div>
+                <div className="canvas-img" ><img id='12' src={image12} alt='image6' /></div>
+                <div className="canvas-img" ><img id='20' src={image20} alt='image7' /></div>
+                <div className="canvas-img" ><img id='21' src={image21} alt='image8' /></div>
+                <div className="canvas-img" ><img id='22' src={image22} alt='image9' /></div>
+                <div className="canvas-img" ><img id='30' src={image30} alt='image10' /></div>
+                <div className="canvas-img" ><img id='31' src={image31} alt='image11' /></div>
+                <div className="canvas-img" ><img id='32' src={image32} alt='image12' /></div>
+                <div className="canvas-img" ><img id='40' src={image40} alt='image13' /></div>
+                <div className="canvas-img" ><img id='41' src={image41} alt='image14' /></div>
+                <div className="canvas-img" ><img id='42' src={image42} alt='image15' /></div>
                 <div className="game-over-notify">Game Over</div>
                 <div className="win-notify">Congratulation!</div>
             </>
