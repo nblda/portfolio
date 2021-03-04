@@ -79,7 +79,7 @@ class StackPage extends React.Component{
     document.addEventListener("mousemove", mouseMoveHandler, false);
     document.addEventListener("touchmove", touchMoveHandler , false);
     document.addEventListener("touchstart", touchStartHandler , false);
-    document.addEventListener("touchend", touchEndHandler , false);
+    canvas.addEventListener("touchend", touchEndHandler , false);
 
     gameOverNotify.addEventListener("click", function() {
         document.location.reload();
@@ -108,9 +108,9 @@ class StackPage extends React.Component{
     }
 
     function touchStartHandler(e){
-        if(e.touches.length !== 0 ){
-            touching = true;
-        }
+        // if(e.touches.length ===  ){
+        //     touching = true;
+        // }
         
         if(e.touches.length === 2){ //si on touche avec deux doigts on revele tout
             enterPressed = true;
@@ -118,7 +118,7 @@ class StackPage extends React.Component{
             enterPressed = false;
         }
         
-        if(e.touches.length === 3){ //si on touche avec deux doigts on revele tout
+        if(e.touches.length === 3){ //si on touche avec trois doigts on restart tout
             touching = false;
             restart();
         }
@@ -130,6 +130,7 @@ class StackPage extends React.Component{
     function touchEndHandler(e){
         if(e.touches.length===0){
             touching = false;
+            spaceBarPressed = true;
         }
     }
 
@@ -354,7 +355,7 @@ class StackPage extends React.Component{
         //     }
         // }
         
-         console.log(touching);
+        //  console.log(touching);
         if(dx === 0 && dy === 0 && !inGame && (spaceBarPressed||touching)){
             dx = 3;
             dy = -2;

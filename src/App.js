@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import './App.css';
 
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
@@ -13,6 +13,7 @@ import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
 import StackPage from './pages/StackPage';
 
+// import gradienta from './assets/images/gradienta.jpg';
 
 import projectsData from './projectsData.js'
 
@@ -53,9 +54,10 @@ class App extends React.Component {
 
   render(){
     return (
+      <div className="contentApp">
         <Router>
           <Container className="p-0 pb-5" fluid={true}>
-            <Navbar className="border-bottom" bg="transparent" expand="lg">
+            <Navbar  bg="transparent" expand="lg">
               <Navbar.Brand>Nicolas Belda</Navbar.Brand>
             
               <Navbar.Toggle aria-controls="navbar-toggle"/>
@@ -79,9 +81,10 @@ class App extends React.Component {
 
             </Container>
 
-            <Footer />
+            {/* <Footer /> */}
 
         </Router>
+        </div>
       );
     }
 }

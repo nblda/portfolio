@@ -8,7 +8,7 @@ function Footer() {
     return(
         <footer className="n-footer">
             {/* fixed-bottom mt-5 */}
-            <Container fluid={true}>
+            <Container fluid={false}>
                 <Row className="border-top justify-content-between p-3">
                     <Col className="p-0" md={3} sm={12}>
                         Nicolas Belda

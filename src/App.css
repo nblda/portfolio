@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.contentApp{
+  background: url(./assets/images/4.jpg) center center / cover no-repeat fixed;
+    /* padding: 100px 20px; */
+    min-height: 100vh;
+}
+ 
