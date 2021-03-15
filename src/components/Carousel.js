@@ -24,7 +24,7 @@ class Carousel extends React.Component {
                 },
                 {
                     id: 1,
-                    title: '3D catalog',
+                    title: '3D cotolog',
                     subTitle: 'vzdcvbezben,rnebz',
                     imgSrc: image2,
                     link: 'https://github.com/nblda/portfolio',
@@ -32,43 +32,67 @@ class Carousel extends React.Component {
                 },
                 {
                     id: 2,
-                    title: '3D catalog',
+                    title: '3D cotalog',
                     subTitle: 'vzdcvbezben,rnebz',
                     imgSrc: image3,
-                    link: 'https://github.com/nblda/portfolio',
+                    link: null,
+                    selected: false     
+                },
+                {
+                    id: 3,
+                    title: '3D cot',
+                    subTitle: 'vzdcvbezben,rnebz',
+                    imgSrc: image3,
+                    link: null,
+                    selected: false     
+                },
+                {
+                    id: 4,
+                    title: 'cotalog',
+                    subTitle: 'vzdcvbezben,rnebz',
+                    imgSrc: image3,
+                    link: null,
+                    selected: false     
+                },
+                {
+                    id: 5,
+                    title: '3D',
+                    subTitle: 'vzdcvbezben,rnebz',
+                    imgSrc: image3,
+                    link: null,
                     selected: false     
                 },
             ]
         };
     }
 
-    handleCardClick = (id, card) => {
-        console.log(id);
-        let items = [...this.state.items];
+    // handleCardClick = (id, card) => {
+    //     console.log(id);
+    //     let items = [...this.state.items];
 
-        items[id].selected = items[id].selected ? false : true;
+    //     items[id].selected = items[id].selected ? false : true;
 
-        items.forEach(item =>{
-            if(item.id !== id) {
-                item.selected = false;
-            }
-        });
+    //     items.forEach(item =>{
+    //         if(item.id !== id) {
+    //             item.selected = false;
+    //         }
+    //     });
 
-        this.setState({
-            items
-        });
-    }
+    //     this.setState({
+    //         items
+    //     });
+    // }
 
     makeItems = (items) => {
         return items.map(item => {
-            return <Card item={item} click={(e => this.handleCardClick(item.id, e))} key={item.id}/>
+            return <Card item={item} click={ console.log(item.id)} key={item.id}/>
         });
     }
 
     render(){
         return(
-            <Container fluid={true}>
-                <Row className="justify-content-around">
+            <Container>
+                <Row className="justify-content-between">
                     {this.makeItems(this.state.items)}
                 </Row>
             </Container>
