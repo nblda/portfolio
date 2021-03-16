@@ -15,6 +15,7 @@ code {
 
 .n-card{
   margin: 20px;
+  display: flex;
 }
 
 .n-card-image{
@@ -26,8 +27,13 @@ code {
 }
 
 .n-card-info{
+  border: solid 1px blue;
   margin-top: 10px;
   min-height: 100px;
+  width: auto;
+  padding-left: 5px ;
+  display: flex;
+  justify-content: center;
 }
 
 .n-card-title{
