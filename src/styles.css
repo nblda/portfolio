@@ -1,10 +1,12 @@
-
+.test{
+  margin-bottom: 250px;
+}
 .c {
   position: absolute;
-  max-width: 300px;
-  max-height: 250px;
-  width: 50ch;
-  height: 50ch;
+  max-width: 150;
+  max-height: 175;
+  width: 25ch;
+  height: 25ch;
   cursor: pointer;
   will-change: transform, opacity;
   border-radius: 10px;

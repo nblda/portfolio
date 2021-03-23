@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-
 .n-card{
   margin: 20px;
   display: flex;
@@ -28,12 +27,10 @@ code {
 
 .n-card-info{
   border: solid 1px blue;
-  margin-top: 10px;
   min-height: 100px;
   width: auto;
   padding-left: 5px ;
-  display: flex;
-  justify-content: center;
+
 }
 
 .n-card-title{
@@ -84,7 +81,7 @@ code {
 /* stack game */
 * {padding: 0; margin: 0;}
         canvas{ 
-          background-color: transparent;
+          background-color: white;
           display: block; 
           margin: 0 auto;
           border: thick double #32a1ce; 
