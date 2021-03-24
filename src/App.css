@@ -51,8 +51,15 @@
 .aboutContent{
   margin-bottom: 20px;
 }
+
 .hero{
   font-weight: 200;
+  margin-top: 15px;
+  margin-bottom: 10px !important;
+}
+
+.heroStack{
+  margin-bottom: 100px;
 }
 
 .homeIcons{
@@ -61,4 +68,8 @@
 
 .homeContainer{
   margin-top: 5em;
+}
+
+.formContact{
+  margin-top: 200px;
 }

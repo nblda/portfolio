@@ -1,5 +1,7 @@
 import React from 'react';
 import NavArrow from '../components/NavArrow';
+import Hero from '../components/Hero';
+
 // import Canvas from '../components/Canvas';
 import image00 from '../assets/images/stack/image00.png';
 import image01 from '../assets/images/stack/image01.png';
@@ -18,6 +20,10 @@ import image41 from '../assets/images/stack/image41.png';
 import image42 from '../assets/images/stack/image42.png';
 
 class StackPage extends React.Component{
+
+    constructor(props) {
+        super(props);
+    }
 
     componentDidMount(){
     var canvas = document.getElementById("myCanvas");
@@ -455,6 +461,8 @@ class StackPage extends React.Component{
             <>
                 <NavArrow side="left" to="/"/>
                 <NavArrow side="right" to="/projects"/>
+
+                <Hero title={this.props.title} subTitle={this.props.subTitle} text={this.props.text}/>
 
                 <canvas id="myCanvas" width="480" height="320"></canvas>
                 <div className="canvas-img" ><img id='00' src={image00} alt='image1' /></div>

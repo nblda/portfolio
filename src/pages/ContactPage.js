@@ -3,6 +3,8 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
         // import Button from 'react-bootstrap/Button';
 import emailjs from 'emailjs-com';
+import '../App.css';
+import '../index.css';
 
 import Hero from '../components/Hero';
 import Content from '../components/Content';
@@ -70,11 +72,11 @@ class ContactPage extends React.Component {
     render(){
         return(
             <div>
-                <Hero title={this.props.title} />
+                <Hero  title={this.props.title} />
 
                 <NavArrow side="left" to="/about"/>
 
-                <Content>
+                <Content className="formContact">
                     {/* this.handleSubmit */}
                     <Form onSubmit={this.sendEmail}> 
                         <Form.Group>

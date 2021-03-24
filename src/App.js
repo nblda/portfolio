@@ -45,9 +45,9 @@ class App extends React.Component {
         data : projectsData
       },
       stack: {
-        title: 'Here are the techs i am familiar with',
+        title: 'Techs I am familiar with',
         subTitle: 'Each one is hiding behind a brick. Try to reveal them all by playing the game',
-        text: 'You can also skip the party and see the result by clicking here'
+        text: 'You can also skip the party and see the result by pressing Enter \n Please press R to restart the game before continuing your navigation!'
       }
     }
   }
