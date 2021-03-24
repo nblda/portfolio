@@ -3,13 +3,14 @@ import { Jumbotron } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+// import Icons from '../components/Icons';
 
 function Hero(props){
     return(
-        <Jumbotron className="bg-transparent jumbotron-fluid p-0 m-0 mb-10">
+        <Jumbotron className="hero bg-transparent jumbotron-fluid p-0 m-0 mb-10">
             <Container fluid={true}>
                 <Row className="justify-content-center">
-                    <Col md={8} sm={10}>
+                    <Col md={9} sm={10}>
                         { props.title && <h1 className="m-0 display-2 font-weight-bolder">{props.title}</h1> }
                         { props.subTitle && <h3 className="display-4 font-weight-light">{props.subTitle}</h3> }
                         { props.text && <h3 className="lead font-weight-light">{props.text}</h3> }

@@ -79,12 +79,12 @@ class AboutGrid extends React.Component {
             <Container className="aboutGrid">
                 <Row className="justify-content-between">
                         <Col sm={12} lg={6} className="order-lg-6  aboutContent"><Content>{this.state.aboutTxt}</Content></Col>
-                        <Col lg={3} md={4} className="order-lg-1" sm={6}><AboutCard item={this.state.items[0]} /></Col>
-                        <Col lg={3} md={4} className="order-lg-2" sm={6}><AboutCard item={this.state.items[1]} /></Col>
-                        <Col lg={3} md={4} className="order-lg-3" sm={6}><AboutCard item={this.state.items[2]} /></Col>
-                        <Col lg={3} md={4} className="order-lg-4" sm={6}><AboutCard item={this.state.items[3]} /></Col>
-                        <Col lg={3} md={4} className="order-lg-5" sm={6}><AboutCard item={this.state.items[4]} /></Col>
-                        <Col lg={3} md={4} className="order-lg-7" sm={6}><AboutCard item={this.state.items[5]} /></Col>                    
+                        <Col lg={3} md={4} className="order-lg-1 test" sm={6}><AboutCard item={this.state.items[0]} /></Col>
+                        <Col lg={3} md={4} className="order-lg-2 test" sm={6}><AboutCard item={this.state.items[1]} /></Col>
+                        <Col lg={3} md={4} className="order-lg-3 test" sm={6}><AboutCard item={this.state.items[2]} /></Col>
+                        <Col lg={3} md={4} className="order-lg-4 test" sm={6}><AboutCard item={this.state.items[3]} /></Col>
+                        <Col lg={3} md={4} className="order-lg-5 test" sm={6}><AboutCard item={this.state.items[4]} /></Col>
+                        <Col lg={3} md={4} className="order-lg-7 test" sm={6}><AboutCard item={this.state.items[5]} /></Col>                    
                 </Row>
             </Container>
             

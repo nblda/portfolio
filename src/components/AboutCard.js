@@ -18,7 +18,7 @@ function AboutCard(props){
     });
 
     return(
-            <div className="d-flex justify-content-around test" onClick={() => set(state => !state)}>
+            <div className="d-flex justify-content-around" onClick={() => set(state => !state)}>
                 <a.div class="c back" style={{  backgroundImage: `url(${props.item.imgSrc})`, opacity: opacity.interpolate(o => 1 - o), transform }}>
                 </a.div>
                 <a.div class="c front" style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(180deg)`)}} > 
