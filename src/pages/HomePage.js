@@ -2,7 +2,7 @@ import React from 'react';
 
 import Hero from '../components/Hero.js';
 import NavArrow from '../components/NavArrow';
-import nico from '../assets/images/nico.png'
+import nico from '../assets/images/nico.jpeg'
 
 import Icons from '../components/Icons';
 

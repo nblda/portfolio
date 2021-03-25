@@ -19,47 +19,47 @@ class AboutGrid extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            aboutTxt : 'Hi there ! I\'m Nicolas an industrial computer science ingineer',
+            aboutTxt : 'Hi there! I\'am Nicolas, an industrial IT engineer. I just graduated after 5 years of work study',
             items : [
                 {
                     id: 0,
                     title: 'Basketball',
-                    subTitle: 'vzdcvbezben,rnebz',
+                    subTitle: 'I began Basketball at 7 and never stopped since. I have played at a national and regional level. I am trully pationate about basketball',
                     imgSrc: basket,
                     selected: true     
                 },
                 {
                     id: 1,
-                    title: 'Sorties sportives',
-                    subTitle: 'vzdcvbezben,rnebz',
+                    title: 'Sports outings',
+                    subTitle: 'What\'s better by a sunny day than playing all kinds of sports with friends like Spikeball, table tennis, football, volleyball...',
                     imgSrc: image2,
                     selected: false     
                 },
                 {
                     id: 2,
                     title: 'Reflexion games',
-                    subTitle: 'vzdcvbezben,rnebz',
+                    subTitle: 'Raining week-ends can be awesome too with either escape games or boardgames!',
                     imgSrc: image3,
                     selected: false     
                 },
                 {
                     id: 3,
-                    title: 'Guitare',
-                    subTitle: 'vzdcvbezben,rnebz',
+                    title: 'Guitar',
+                    subTitle: 'I have played guitar for 7 years when I was 7. I am trying getting back into it but I lost so much level !',
                     imgSrc: image1,                  
                     selected: false     
                 },
                 {
                     id: 4,
-                    title: 'Impression 3D',
-                    subTitle: 'vzdcvbezben,rnebz',
+                    title: '3D Printing/Arduino',
+                    subTitle: 'I like solving ponctual problems with 3D prints or small electroniq editings like replacing small broken plastic pieces or a sort of alarm system.',
                     imgSrc: image3,                   
                     selected: false     
                 },
                 {
                     id: 5,
-                    title: 'Cuisine',
-                    subTitle: 'vzdcvbezben,rnebz',
+                    title: 'Cooking',
+                    subTitle: 'I have recently discovered that vegetables were awesome. Since that I love cooking and discover more and more recipes!',
                     imgSrc: image3,                   
                     selected: false     
                 },
