@@ -5,6 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import './App.css';
 
+import logoSansFond1 from './assets/logos/logoSansFond1.png';
+
 // import Footer from './components/Footer';
 
 import HomePage from './pages/HomePage';
@@ -45,9 +47,8 @@ class App extends React.Component {
         data : projectsData
       },
       stack: {
-        title: 'Techs I am familiar with',
-        subTitle: 'Each one is hiding behind a brick. Try to reveal them all by playing the game',
-        text: 'You can also skip the party and see the result by pressing Enter. \r Please press R to restart the game before continuing your navigation!'
+        title: 'Techs I am familiar with.',
+        subTitle: 'Try to reveal them all by playing the game.',
       }
     }
   }
@@ -58,7 +59,7 @@ class App extends React.Component {
         <Router>
           <Container className="p-0 pb-5" fluid={true}>
             <Navbar  bg="transparent" expand="lg">
-              <Navbar.Brand>Nicolas Belda</Navbar.Brand>
+              <Navbar.Brand><img className="logoNB" src={logoSansFond1} alt="logo Belda Nicolas" height="60px"></img></Navbar.Brand>
             
               <Navbar.Toggle aria-controls="navbar-toggle"/>
 

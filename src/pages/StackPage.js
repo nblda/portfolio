@@ -1,6 +1,7 @@
 import React from 'react';
 import NavArrow from '../components/NavArrow';
 import Hero from '../components/Hero';
+import { IoWarningOutline } from 'react-icons/io5';
 
 // import Canvas from '../components/Canvas';
 import image00 from '../assets/images/stack/image00.png';
@@ -18,6 +19,10 @@ import image32 from '../assets/images/stack/image32.png';
 import image40 from '../assets/images/stack/image40.png';
 import image41 from '../assets/images/stack/image41.png';
 import image42 from '../assets/images/stack/image42.png';
+
+import RKey from '../assets/images/icons/RKey.png';
+import EnterKey from '../assets/images/icons/EnterKey.png';
+
 
 class StackPage extends React.Component{
 
@@ -459,6 +464,8 @@ class StackPage extends React.Component{
                 <NavArrow side="right" to="/projects"/>
 
                 <Hero title={this.props.title} subTitle={this.props.subTitle} text={this.props.text}/>
+                <p className="d-flex justify-content-center parag">You can skip the party and see the result by pressing and holding <img src={EnterKey} alt="Enter Key" height="42px"></img></p>
+                <p className="d-flex justify-content-center warning parag"><IoWarningOutline size={32}/> Press <img src={RKey} alt="R Key" ></img> to restart the game before continuing your navigation!</p>
 
                 <canvas id="myCanvas" width="480" height="320"></canvas>
                 <div className="canvas-img" ><img id='00' src={image00} alt='image1' /></div>

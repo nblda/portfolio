@@ -26,7 +26,7 @@ code {
 }
 
 .n-card-info{
-  border: solid 1px blue;
+  /* border: solid 1px blue; */
   min-height: 100px;
   width: auto;
   padding-left: 5px ;

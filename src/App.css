@@ -37,12 +37,18 @@
   }
 }
 
+
+
 .contentApp{
   background: url(./assets/images/4.jpg) center center / cover no-repeat fixed;
     /* padding: 100px 20px; */
     min-height: 100vh;
 }
  
+
+.parag{
+  margin-bottom: 5px;
+}
 
 .aboutGrid{
   margin-top: 50px;
@@ -54,7 +60,7 @@
 
 .hero{
   font-weight: 200;
-  margin-top: 15px;
+  margin-top: 0px;
   margin-bottom: 10px !important;
 }
 
@@ -67,11 +73,22 @@
 }
 
 .homeIcons{
-  margin-top: 5em;
+  margin-top: 11px;
 }
 
-.homeContainer{
+/* .homeContainer{
   margin-top: 5em;
+} */
+
+@media only screen and (min-width : 823px) {
+  /* Styles */
+  .homeContainer{
+    margin-top: 5em;
+  }
+
+  .homeIcons{
+    margin-top: 5em;
+  }
 }
 
 .formContact{
@@ -83,5 +100,17 @@
   border: none;
 }
 
+.warning{
+  color: red;
+}
+
 .link { color: black; }
 .link:hover { color: black; }
+
+.logoNB{
+  padding-left: 10px;
+}
+
+.photoHome{
+  margin-top: 10px;
+}
