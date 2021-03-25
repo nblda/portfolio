@@ -21,10 +21,6 @@ import image42 from '../assets/images/stack/image42.png';
 
 class StackPage extends React.Component{
 
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount(){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");

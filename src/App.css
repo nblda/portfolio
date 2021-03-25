@@ -62,6 +62,10 @@
   margin-bottom: 100px;
 }
 
+.heroContact{
+  margin-top: 100px;
+}
+
 .homeIcons{
   margin-top: 5em;
 }
@@ -73,3 +77,11 @@
 .formContact{
   margin-top: 200px;
 }
+
+.buttonMail{
+  background-color: transparent;
+  border: none;
+}
+
+.link { color: black; }
+.link:hover { color: black; }
