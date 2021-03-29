@@ -66,16 +66,18 @@ code {
   height: 100%;
 }
 
-.nav-arrow-right{
+.nav-arrow{
+  z-index: 100;
   position : fixed;
+  top: 90%;
+}
+
+.nav-arrow-right{
   right: 0;
-  top: 50%;
 }
 
 .nav-arrow-left{
-  position : fixed;
   left: 0;
-  top: 50%;
 }
 
 /* stack game */

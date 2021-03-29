@@ -12,7 +12,7 @@ function HomePage(props){
     return(
         <div>
             <container className="homeContainer d-flex flex-wrap-reverse justify-content-center">
-                <Hero title={props.title} subTitle={props.subTitle} text={props.text}/>
+                <Hero titleClassName="homeHeroTitle" title={props.title} subTitleClassName="homeHeroSubTitle" subTitle={props.subTitle} text={props.text}/>
                 <img className="photoHome" src={nico} alt="Nicolas" height="250px"></img>
             </container>
             <Icons className="homeIcons" cv="true" email="true" linkedin="true"></Icons>

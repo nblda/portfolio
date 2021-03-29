@@ -72,7 +72,7 @@ class ContactPage extends React.Component {
     render(){
         return(
             <div>
-                <Hero className="heroContact" title={this.props.title} />
+                <Hero className="heroContact" title={this.props.title} titleClassName="heroTitle"/>
 
                 <NavArrow side="left" to="/about"/>
 

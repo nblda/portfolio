@@ -11,8 +11,8 @@ function Hero(props){
             <Container fluid={true}>
                 <Row className="justify-content-center">
                     <Col md={9} sm={10}>
-                        { props.title && <h1 className="m-0 display-2 font-weight-bolder">{props.title}</h1> }
-                        { props.subTitle && <h3 className="display-4 font-weight-light">{props.subTitle}</h3> }
+                        { props.title && <h1 className={props.titleClassName}>{props.title}</h1> }
+                        { props.subTitle && <h3 className={props.subTitleClassName}>{props.subTitle}</h3> }
                         { props.text && <h3 className="lead font-weight-light">{props.text}</h3> }
                     </Col>
                 </Row>

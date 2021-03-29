@@ -1,5 +1,5 @@
 .test{
-  margin-bottom: 230px;
+  margin-bottom: 27ch;
 }
 .c {
   position: absolute;
@@ -20,6 +20,11 @@
 .front,
 .back {
   background-size: cover;
+}
+
+.front{
+  border: solid 3px grey;
+  border-style: inset;
 }
 /* 
 .back {

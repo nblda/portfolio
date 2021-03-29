@@ -59,7 +59,7 @@ class App extends React.Component {
         <Router>
           <Container className="p-0 pb-5" fluid={true}>
             <Navbar  bg="transparent" expand="lg">
-              <Navbar.Brand><img className="logoNB" src={logoSansFond1} alt="logo Belda Nicolas" height="60px"></img></Navbar.Brand>
+              <Navbar.Brand><img className="logoNB" src={logoSansFond1} alt="logo Belda Nicolas"></img></Navbar.Brand>
             
               <Navbar.Toggle aria-controls="navbar-toggle"/>
 

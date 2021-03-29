@@ -76,9 +76,66 @@
   margin-top: 11px;
 }
 
-/* .homeContainer{
-  margin-top: 5em;
-} */
+.homeHeroTitle{
+  font-size: 40px;
+}
+.homeHeroSubTitle{
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.heroTitle{
+font-size: 40px;
+}
+
+.heroSubTitle{
+  font-size: 20px;
+  font-weight: 200;
+}
+
+#computer{
+  display: block;
+}
+
+#mobile{
+  display: none;
+}
+/* detection d'un ecran tactile pour y afficher les regles adaptées de restart et de revealAll pour la page stack */
+@media (hover: none) {
+  #computer{
+    display: none;
+  }
+
+  #mobile{
+    display: block;
+    padding: 5px;
+  }
+}
+
+.logoNB{
+  height: 40px;
+}
+
+@media only screen and (min-width : 992px) {
+  .homeHeroTitle{
+    font-size: 90px;
+  }
+  .homeHeroSubTitle{
+    font-size: 60px;
+  }
+
+  .heroTitle{
+    font-size: 80px;
+  }
+
+  .heroSubTitle{
+    font-size: 50px;
+  }
+
+  .logoNB{
+    height: 60px;
+  }
+}
 
 @media only screen and (min-width : 823px) {
   /* Styles */
