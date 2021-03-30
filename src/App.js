@@ -1,8 +1,8 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+// import Nav from 'react-bootstrap/Nav';
 import './App.css';
 
 import logoSansFond1 from './assets/logos/logoSansFond1.png';
@@ -14,6 +14,8 @@ import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
 import StackPage from './pages/StackPage';
+
+import TopBar from './components/TopBar.js';
 
 // import gradienta from './assets/images/gradienta.jpg';
 
@@ -58,20 +60,10 @@ class App extends React.Component {
       <div className="contentApp">
         <Router>
           <Container className="p-0 pb-5" fluid={true}>
-            <Navbar  bg="transparent" expand="lg">
+            <Navbar collapseOnSelect={true} bg="transparent" expand="lg">
               <Navbar.Brand><img className="logoNB" src={logoSansFond1} alt="logo Belda Nicolas"></img></Navbar.Brand>
-            
-              <Navbar.Toggle aria-controls="navbar-toggle"/>
-
-              <Navbar.Collapse id="navbar-toggle">
-                <Nav className="ml-auto navToggle">
-                  <Link className="nav-link" to="/">Home</Link>
-                  <Link className="nav-link" to="/stack">Stack</Link>
-                  <Link className="nav-link" to="/projects">Projects</Link>
-                  <Link className="nav-link" to="/about">About</Link>
-                  <Link className="nav-link" to="/contact">Contact</Link>
-                </Nav>
-              </Navbar.Collapse>
+          
+                <TopBar></TopBar>
             </Navbar>
 
             <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text} /> } />
@@ -81,7 +73,6 @@ class App extends React.Component {
             <Route path="/projects" exact render={() => <ProjectsPage title={this.state.projects.title} /> } />
 
             </Container>
-
             {/* <Footer /> */}
 
         </Router>

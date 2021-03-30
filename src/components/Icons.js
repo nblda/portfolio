@@ -25,7 +25,7 @@ function Icons(props){
                             <button className="buttonMail" ref={target} onClick={() => setShow(!show)}>
                                 <HiOutlineMail size={35}/>
                             </button>
-                            <Overlay target={target.current} show={show} placement="right">
+                            <Overlay target={target.current} show={show} placement="bottom">
                                 {({ placement, arrowProps, show: _show, popper, ...props }) => (
                                 <div
                                     {...props}

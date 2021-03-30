@@ -465,11 +465,11 @@ class StackPage extends React.Component{
 
                 <Hero title={this.props.title} subTitle={this.props.subTitle} text={this.props.text} titleClassName="heroTitle" subTitleClassName="heroSubTitle"/>
                 <div id="computer">
-                    <p id="computer" className="d-flex justify-content-center parag computer">You can skip the party and see the result by pressing and holding <img src={EnterKey} alt="Enter Key" height="42px"></img></p>
+                    <p id="computer" className="d-flex justify-content-center parag computer">You can skip the game and see the result by pressing and holding <img src={EnterKey} alt="Enter Key" height="42px"></img></p>
                     <p className="d-flex justify-content-center warning parag computer"><IoWarningOutline size={32}/> Press <img src={RKey} alt="R Key" ></img> to restart the game before continuing your navigation!</p>
                 </div>
                 <div id="mobile">
-                    <p id="mobile" className="d-flex justify-content-center parag mobile">You can skip the party and see the result by touching the screen with 2 fingers</p>
+                    <p id="mobile" className="d-flex justify-content-center parag mobile">You can skip the game and see the result by touching the screen with 2 fingers</p>
                     <p className="d-flex justify-content-center warning parag mobile"><IoWarningOutline size={32}/> Touch with 3 fingers outside game's windows to restart before continuing your navigation!</p>
                 </div>
 
