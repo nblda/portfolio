@@ -7,7 +7,7 @@ import AboutGrid from '../components/AboutGrid';
 function AboutPage(props) {
     return(
         <div>
-            <Hero title={props.title} titleClassName="heroTitle"/>
+            <Hero title={props.title} titleClassName="heroTitle" text={props.text} />
 
             <NavArrow side="left" to="/projects"/>
             <NavArrow side="right" to="/contact"/>

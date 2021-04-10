@@ -6,9 +6,11 @@ import '../styles.css'
 
 import Card from './Card.js';
 
-import image1 from '../assets/images/projects/image1.png';
-import image2 from '../assets/images/projects/image2.png';
-import image3 from '../assets/images/projects/image3.png';
+import gestock from '../assets/images/projects/gestock.png';
+import catalog from '../assets/images/projects/3dcatalog.png';
+import dashboard from '../assets/images/projects/dashboard.png';
+import maestroom2 from '../assets/images/projects/maestroom2.png';
+import estitool from '../assets/images/projects/estitool.png';
 
 
 const breakPoints = [
@@ -28,48 +30,40 @@ class ProjectCarousel extends React.Component {
                 {
                     id: 0,
                     title: '3D catalog',
-                    subTitle: 'vzdcvbezben,rnebz',
-                    imgSrc: image1,
+                    subTitle: 'An internal catalog to give access to 3D printed after sales parts or tools.',
+                    imgSrc: catalog,
                     link: 'https://github.com/nblda/portfolio',
                     selected: true     
                 },
                 {
                     id: 1,
-                    title: '3D cotolog',
-                    subTitle: 'vzdcvbezben,rnebz',
-                    imgSrc: image2,
+                    title: 'Estitool',
+                    subTitle: 'A production cost calculator to validate a product or rework its conception.',
+                    imgSrc: estitool,
                     link: 'https://github.com/nblda/portfolio',
                     selected: false     
                 },
                 {
                     id: 2,
-                    title: '3D cotalog',
-                    subTitle: 'vzdcvbezben,rnebz',
-                    imgSrc: image3,
+                    title: '3D Prints Dashboard',
+                    subTitle: 'A dashboard set up on severall screens to monitore each 3D print process in the lab.',
+                    imgSrc: dashboard,
                     link: null,
                     selected: false     
                 },
                 {
                     id: 3,
-                    title: '3D cot',
-                    subTitle: 'vzdcvbezben,rnebz',
-                    imgSrc: image3,
+                    title: 'Gestock',
+                    subTitle: 'A stock management tool that works with a QR code scanner. ',
+                    imgSrc: gestock,
                     link: null,
                     selected: false     
                 },
                 {
                     id: 4,
-                    title: 'cotalog',
-                    subTitle: 'vzdcvbezben,rnebz',
-                    imgSrc: image3,
-                    link: null,
-                    selected: false     
-                },
-                {
-                    id: 5,
-                    title: '3D',
-                    subTitle: 'vzdcvbezben,rnebz',
-                    imgSrc: image3,
+                    title: 'Maestroom HMI',
+                    subTitle: 'Human Machine Interface made on a touchscreen to configure wifi-connexion and monitor datas from sensors.',
+                    imgSrc: maestroom2,
                     link: null,
                     selected: false     
                 },
