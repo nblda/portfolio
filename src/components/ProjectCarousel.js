@@ -32,7 +32,7 @@ class ProjectCarousel extends React.Component {
                     title: '3D catalog',
                     subTitle: 'An internal catalog to give access to 3D printed after sales parts or tools.',
                     imgSrc: catalog,
-                    link: 'https://github.com/nblda/portfolio',
+                    link: null,
                     selected: true     
                 },
                 {
@@ -40,7 +40,7 @@ class ProjectCarousel extends React.Component {
                     title: 'Estitool',
                     subTitle: 'A production cost calculator to validate a product or rework its conception.',
                     imgSrc: estitool,
-                    link: 'https://github.com/nblda/portfolio',
+                    link: null,
                     selected: false     
                 },
                 {

@@ -14,10 +14,11 @@ code {
 
 .n-card{
   margin: 20px;
-  display: flex;
 }
 
-.n-card-image{
+.n-card-image{ 
+  display: flex;
+  justify-content: center;  
   border-radius: 10px;
   width: 300px;
   height: 250px;

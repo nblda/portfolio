@@ -33,8 +33,8 @@ class TopBar extends React.Component {
                 <div id="myNav" class="overlay">
                     <span to="/" class="closebtn" onClick={this.closeNav}>&times;</span>
                     <div class="overlay-content">
-                    <Link onClick={this.closeNav} to="/">home</Link>
-                    <Link onClick={this.closeNav} to="/stack">Competences</Link>
+                    <Link onClick={this.closeNav} to="/">Home</Link>
+                    <Link onClick={this.closeNav} to="/stack">Skills</Link>
                     <Link onClick={this.closeNav} to="/projects">My projetcs</Link>
                     <Link onClick={this.closeNav} to="/about">About Me</Link>
                     <Link onClick={this.closeNav} to="/contact">Contact</Link>
