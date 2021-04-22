@@ -1,6 +1,4 @@
 import React from 'react';
-// import { useSpring, animated } from 'react-spring';
-// import '../styles.css';
 
 function CardInfo(props){
 
@@ -14,10 +12,7 @@ function CardInfo(props){
             </div>
             }
             </>
-        );
-    // }
-
-    
+        );   
 }
 
 export default CardInfo;

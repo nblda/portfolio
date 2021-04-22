@@ -1,13 +1,6 @@
-// import React from 'react';
-// import { render } from 'react-dom'
 import React, { useState } from 'react'
 import { useSpring, animated as a } from 'react-spring'
 import '../styles.css'
-// import Col from 'react-bootstrap/Col';
-
-// import AboutCardInfo from './AboutCarInfo.js';
-
-
 
 function AboutCard(props){
     const [flipped, set] = useState(false);

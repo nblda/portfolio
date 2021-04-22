@@ -452,8 +452,6 @@ class StackPage extends React.Component{
 
     } //end fonction draw
 
-
-   // var interval = setInterval(draw, 10);
    draw();
     }
 

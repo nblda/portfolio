@@ -6,8 +6,6 @@ import nico from '../assets/images/nico.jpeg'
 
 import Icons from '../components/Icons';
 
-
-
 function HomePage(props){
     return(
         <div>

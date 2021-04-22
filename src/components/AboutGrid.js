@@ -3,23 +3,24 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-
 import '../styles.css'
 
 import Content from './Content';
 import AboutCard from './AboutCard.js';
 
-import image1 from '../assets/images/projects/image1.png';
-import image2 from '../assets/images/projects/image2.png';
-import image3 from '../assets/images/projects/image3.png';
+import spikeball from '../assets/images/about/spikeball.jpg';
+import tarot from '../assets/images/about/tarot.jpg';
+import vegetable from '../assets/images/about/vegetable.jpg';
 import basket from '../assets/images/about/basket.jpeg';
+import guitar from '../assets/images/about/guitar3.jpg';
+import automation from '../assets/images/about/automation.png';
 
 
 class AboutGrid extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            aboutTxt : 'Hi there! I\'am Nicolas, an industrial IT engineer. I just graduated after 5 years of work study',
+            aboutTxt : 'Hi there! I\'am Nicolas, I am a young graduated engineer after 5 years of work-study in electronic and industrial computing. I am looking for an internship abroad to work on web/mobile sites or applications.I am passionate about sports. I like trying to automate recurrents actions to make daily life easier.',
             items : [
                 {
                     id: 0,
@@ -32,35 +33,35 @@ class AboutGrid extends React.Component {
                     id: 1,
                     title: 'Sports outings',
                     subTitle: 'What\'s better by a sunny day than playing all kinds of sports with friends like Spikeball, table tennis, football, volleyball...',
-                    imgSrc: image2,
+                    imgSrc: spikeball,
                     selected: false     
                 },
                 {
                     id: 2,
-                    title: 'Reflexion games',
-                    subTitle: 'Raining week-ends can be awesome too with either escape games or boardgames!',
-                    imgSrc: image3,
+                    title: 'Mind games',
+                    subTitle: 'Raining week-ends can be awesome too with either mind games or boardgames!',
+                    imgSrc: tarot,
                     selected: false     
                 },
                 {
                     id: 3,
                     title: 'Guitar',
                     subTitle: 'I have played guitar for 7 years when I was 7. I am trying getting back into it but I lost so much level !',
-                    imgSrc: image1,                  
+                    imgSrc: guitar,                  
                     selected: false     
                 },
                 {
                     id: 4,
-                    title: '3D Printing/Arduino',
-                    subTitle: 'I like solving ponctual problems with 3D prints or small electroniq editings like replacing small broken plastic pieces or a sort of alarm system.',
-                    imgSrc: image3,                   
+                    title: '3D Prints/Arduino',
+                    subTitle: 'I like solving ponctual problems with 3D prints or small electronic editings like replacing small broken plastic pieces or a sort of alarm system.',
+                    imgSrc: automation,                   
                     selected: false     
                 },
                 {
                     id: 5,
                     title: 'Cooking',
                     subTitle: 'I have recently discovered that vegetables were awesome. Since that I love cooking and discover more and more recipes!',
-                    imgSrc: image3,                   
+                    imgSrc: vegetable,                   
                     selected: false     
                 },
             ]

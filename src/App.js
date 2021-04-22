@@ -2,12 +2,9 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-// import Nav from 'react-bootstrap/Nav';
 import './App.css';
 
 import logoSansFond1 from './assets/logos/logoSansFond1.png';
-
-// import Footer from './components/Footer';
 
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
@@ -16,11 +13,6 @@ import ProjectsPage from './pages/ProjectsPage';
 import StackPage from './pages/StackPage';
 
 import TopBar from './components/TopBar.js';
-
-// import gradienta from './assets/images/gradienta.jpg';
-
-import projectsData from './projectsData.js'
-
 
 class App extends React.Component {
 
@@ -47,7 +39,6 @@ class App extends React.Component {
       },
       projects: {
         title:'Find my projects below',
-        data : projectsData
       },
       stack: {
         title: 'Techs I am familiar with.',
@@ -60,7 +51,7 @@ class App extends React.Component {
     return (
       <div className="contentApp">
         <Router>
-          <Container className="p-0 pb-5" fluid={true}>
+          <Container className="p-0 pb-2" fluid={true}>
             <Navbar collapseOnSelect={true} bg="transparent" expand="lg">
               <Navbar.Brand><img className="logoNB" src={logoSansFond1} alt="logo Belda Nicolas"></img></Navbar.Brand>
           
@@ -74,7 +65,6 @@ class App extends React.Component {
             <Route path="/projects" exact render={() => <ProjectsPage title={this.state.projects.title} /> } />
 
             </Container>
-            {/* <Footer /> */}
 
         </Router>
         </div>

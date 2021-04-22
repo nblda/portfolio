@@ -7,7 +7,6 @@ function Footer() {
     
     return(
         <footer className="n-footer">
-            {/* fixed-bottom mt-5 */}
             <Container fluid={false}>
                 <Row className="border-top justify-content-between p-3">
                     <Col className="p-0" md={3} sm={12}>
@@ -16,7 +15,6 @@ function Footer() {
                     <Col className="p-0 d-flex justify-content-end" md={3}>
                         This site was made by Nicolas Belda
                     </Col>
-
                 </Row>
             </Container>
         </footer>

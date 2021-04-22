@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from '../components/Hero.js';
-// import Content from '../components/Content.js';
 import NavArrow from '../components/NavArrow';
 import AboutGrid from '../components/AboutGrid';
 

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Form from 'react-bootstrap/Form';
-        // import Button from 'react-bootstrap/Button';
 import emailjs from 'emailjs-com';
 import '../App.css';
 import '../index.css';
@@ -9,8 +8,6 @@ import '../index.css';
 import Hero from '../components/Hero';
 import Content from '../components/Content';
 import NavArrow from '../components/NavArrow';
-
-// import Axios from 'axios';
 
 class ContactPage extends React.Component {
 
@@ -26,7 +23,6 @@ class ContactPage extends React.Component {
     }
 
     resetForm = () => {
-        // e.target.reset();
         console.log('reset');
         this.setState({
             name: '',
@@ -77,7 +73,6 @@ class ContactPage extends React.Component {
                 <NavArrow side="left" to="/about"/>
 
                 <Content className="formContact">
-                    {/* this.handleSubmit */}
                     <Form onSubmit={this.sendEmail}> 
                         <Form.Group>
                             <Form.Label htmlFor="full-name">Full Name</Form.Label>

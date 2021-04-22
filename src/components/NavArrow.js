@@ -1,14 +1,9 @@
 import React from 'react';
-// import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { IoIosArrowForward, IoIosArrowBack  } from 'react-icons/io';
 
 function NavArrow(props){
 console.log(props)
-
-// const redirectTo = (target) =>  {
-//    history.push('/'+target);
-// }
 
     return(
         <div>
