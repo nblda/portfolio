@@ -33,6 +33,7 @@ class ProjectCarousel extends React.Component {
                     subTitle: 'An internal catalog to give access to 3D printed after sales parts or tools.',
                     imgSrc: catalog,
                     link: null,
+                    techs: ["html", "css", "js"],
                     selected: true     
                 },
                 {
@@ -41,6 +42,7 @@ class ProjectCarousel extends React.Component {
                     subTitle: 'A production cost calculator to validate a product or rework its conception.',
                     imgSrc: estitool,
                     link: null,
+                    techs: ["angular", "php", "pgsql"],
                     selected: false     
                 },
                 {
@@ -49,6 +51,7 @@ class ProjectCarousel extends React.Component {
                     subTitle: 'A dashboard set up on severall screens to monitore each 3D print process in the lab.',
                     imgSrc: dashboard,
                     link: null,
+                    techs: ["react", "js"],
                     selected: false     
                 },
                 {
@@ -57,6 +60,7 @@ class ProjectCarousel extends React.Component {
                     subTitle: 'A stock management tool that works with a QR code scanner. ',
                     imgSrc: gestock,
                     link: null,
+                    techs: ["html", "css", "js", "php", "mysql"],
                     selected: false     
                 },
                 {
@@ -65,6 +69,7 @@ class ProjectCarousel extends React.Component {
                     subTitle: 'Human Machine Interface made on a touchscreen to configure wifi-connexion and monitor datas from sensors.',
                     imgSrc: maestroom2,
                     link: null,
+                    techs: ["html", "css", "js", "php", "mysql"],
                     selected: false     
                 },
             ]
