@@ -85,9 +85,10 @@ code {
 .tech-card{
   display: flex;
   font-size: 0.8em;
+  color: white;
   width: auto;
   height: 20px;
-  padding: 2px 5px;
+  padding: 1px 5px ;
   border: solid 1px blue;
   border-radius: 2px 5px 5px;
   background-color: rgb(93, 192, 223);

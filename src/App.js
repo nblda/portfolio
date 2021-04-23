@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import './App.css';
@@ -50,7 +50,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="contentApp">
-        <Router basename={'/portfolio'}>
+        <Router>
           <Container className="p-0 pb-2" fluid={true}>
             <Navbar collapseOnSelect={true} bg="transparent" expand="lg">
               <Navbar.Brand>
