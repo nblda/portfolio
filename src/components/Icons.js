@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { AiOutlineIdcard, AiOutlineLinkedin } from 'react-icons/ai';
 import { HiOutlineMail } from 'react-icons/hi';
-import cvAnglais from '../assets/pdf/_CV_Belda_Nicolas anglais.pdf'
+import cvAnglais from '../assets/pdf/_CV_Belda_Nicolas_english.pdf'
 
 function Icons(props){
 
