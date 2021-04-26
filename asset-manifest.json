@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.e4b86783.chunk.css",
-    "main.js": "/portfolio/static/js/main.19a2ff1a.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.19a2ff1a.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.e0592555.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.e0592555.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.8fed2963.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.8fed2963.js.map",
     "static/css/2.658248ec.chunk.css": "/portfolio/static/css/2.658248ec.chunk.css",
@@ -15,7 +15,6 @@
     "static/media/3dcatalog.2e425e18.png": "/portfolio/static/media/3dcatalog.2e425e18.png",
     "static/media/App.css": "/portfolio/static/media/4.2b7a1c61.jpg",
     "static/media/EnterKey.8661b3cc.png": "/portfolio/static/media/EnterKey.8661b3cc.png",
-    "static/media/_CV_Belda_Nicolas_english.4c003faa.pdf": "/portfolio/static/media/_CV_Belda_Nicolas_english.4c003faa.pdf",
     "static/media/automation.0f446958.png": "/portfolio/static/media/automation.0f446958.png",
     "static/media/basket.5c5b47df.jpeg": "/portfolio/static/media/basket.5c5b47df.jpeg",
     "static/media/dashboard.6296596f.png": "/portfolio/static/media/dashboard.6296596f.png",
@@ -34,6 +33,6 @@
     "static/css/2.658248ec.chunk.css",
     "static/js/2.87b9b6ca.chunk.js",
     "static/css/main.e4b86783.chunk.css",
-    "static/js/main.19a2ff1a.chunk.js"
+    "static/js/main.e0592555.chunk.js"
   ]
 }
