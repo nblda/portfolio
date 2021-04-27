@@ -5,7 +5,7 @@
   position: absolute;
   max-width: 150;
   max-height: 175;
-  width: 25ch;
+  width: 24ch;
   height: 25ch;
   cursor: pointer;
   will-change: transform, opacity;
