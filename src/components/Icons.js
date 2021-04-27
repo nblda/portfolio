@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { AiOutlineIdcard, AiOutlineLinkedin } from 'react-icons/ai';
 import { HiOutlineMail } from 'react-icons/hi';
-import cvAnglais from '../assets/pdf/_CV_Belda_Nicolas_english.pdf'
+// import cvAnglais from '../_CV_Belda_Nicolas_english.4c003faa.pdf'
 
 function Icons(props){
 
@@ -15,7 +15,7 @@ function Icons(props){
     return(
             <Container className={props.className} fluid={false}>
                 <Row className="justify-content-center">
-                        { props.cv && <a className="link" href={cvAnglais} ><AiOutlineIdcard size={35}/></a> }
+                        { props.cv && <a className="link" href="https://drive.google.com/file/d/1IrRTHyPFjPmzdkOzTA6GGUbpjxtlRElv/view?usp=sharing" target="_blank" rel="noreferrer"><AiOutlineIdcard size={35}/></a> }
                         { props.linkedin && <a className="link" href="https://www.linkedin.com/in/nicolas-belda-8967821b2/" target="_blank" rel="noopener noreferrer"><AiOutlineLinkedin size={35}/></a> }
                         { props.email && 
                            <>
